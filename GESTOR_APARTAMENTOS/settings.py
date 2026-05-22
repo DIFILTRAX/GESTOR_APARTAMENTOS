@@ -1,6 +1,8 @@
 from pathlib import Path
 from datetime import timedelta
 import pymysql
+import os
+
 pymysql.install_as_MySQLdb()
 
 
@@ -9,12 +11,12 @@ pymysql.install_as_MySQLdb()
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bs-+5w(-%(to0bnikh)pqnrchh_20a)3bbozsfqq_&vveq^09s'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
